@@ -3,11 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [screenWidth, setScreenWidth] = useState(0);
-
+const[pathname,setPathname]=useState("/");
+console.log(pathname);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -47,10 +49,10 @@ const Header = () => {
       <GiHamburgerMenu  onClick={toggleMobileMenu} className="md:hidden flex items-center text-2xl"/> 
         ):  <nav id="navbar" className="hidden md:flex">
         <ul className="flex space-x-6">
-          <li><Link href="#hero" className="nav-link scrollto text-blue-600">Home</Link></li>
-          <li><Link href="/about" className="nav-link scrollto text-gray-600">About</Link></li>
-          <li><Link href="/#services" className="nav-link scrollto text-gray-600">Services</Link></li>
-          <li><Link href="/contact" className="getstarted scrollto text-white bg-[#14279b] py-2 px-4 rounded-3xl hover:text-white">Contact us</Link></li>
+          <li><Link href="/" onClick={()=>setPathname("/")}  className={`${pathname=="/"?"text-blue-600":"text-gray-600"} nav-link scrollto`}>Home</Link></li>
+          <li><Link href="/about" onClick={()=>setPathname("about")} className={`${pathname=="about"?"text-blue-600":"text-gray-600"} nav-link scrollto`}>About</Link></li>
+          <li><Link href="/#services" onClick={()=>setPathname("/#services")} className={`${pathname=="/#services"?"text-blue-600":"text-gray-600"} nav-link scrollto`}>Services</Link></li>
+          <li><Link href="/contact" onClick={()=>setPathname("/contact")} className="getstarted scrollto text-white bg-[#14279b] py-2 px-4 rounded-3xl hover:text-white">Contact us</Link></li>
         </ul>
         <button className="md:hidden flex items-center">
           <i className="bi bi-list text-2xl"></i>
@@ -62,16 +64,16 @@ const Header = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div className="bg-white w-full max-w-md p-8 rounded-md shadow-md">
               <nav id="navbar" className="flex flex-col space-y-4">
-                <Link href="#hero" className="nav-link scrollto text-blue-600">
+                <Link href="/"  onClick={()=>setIsMobileMenuOpen(false)} className="nav-link scrollto ">
                   Home
                 </Link>
-                <Link href="/about" className="nav-link scrollto text-gray-600">
+                <Link href="/about" onClick={()=>setIsMobileMenuOpen(false)} className="nav-link scrollto text-gray-600">
                   About
                 </Link>
-                <Link href="#services" className="nav-link scrollto text-gray-600">
+                <Link href="/#services" onClick={()=>setIsMobileMenuOpen(false)} scroll={false}className="nav-link scrollto text-gray-600">
                   Services
                 </Link>
-                <Link href="/contact" className="getstarted scrollto text-white bg-blue-600 py-2 px-4 rounded">
+                <Link href="/contact" onClick={()=>setIsMobileMenuOpen(false)} className="getstarted scrollto text-white bg-blue-600 py-2 px-4 rounded">
                   Contact us
                 </Link>
               </nav>

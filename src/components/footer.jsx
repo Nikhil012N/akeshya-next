@@ -1,4 +1,3 @@
-// components/Footer.js
 import Link from 'next/link'
 
 export default function Footer() {
@@ -12,17 +11,17 @@ export default function Footer() {
           <div>
             <ul className="flex list-none space-x-6">
               <li>
-                <Link href="/Terms and conditions.pdf" className="hover:underline">
+                <Link href="https://akeshya.com/Terms%20and%20conditions.pdf" className="hover:underline">
                   Terms and conditions
                 </Link>
               </li>
               <li>
-                <Link href="/Refund policy.pdf" className="hover:underline">
+                <Link href="https://akeshya.com/Refund%20policy.pdf" className="hover:underline">
                   Refund policy
                 </Link>
               </li>
               <li>
-                <Link href="/Privacy policy.pdf" className="hover:underline">
+                <Link href="https://akeshya.com/Privacy%20policy.pdf" className="hover:underline">
                   Privacy policy
                 </Link>
               </li>
