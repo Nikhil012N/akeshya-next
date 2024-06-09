@@ -1,4 +1,3 @@
-
 import { FaDribbble, FaFile, FaGlobe, FaTachometerAlt } from "react-icons/fa";
 
 const Services = () => {
@@ -30,7 +29,7 @@ const Services = () => {
               </h4>
               <p className="description text-gray-700">
                 Our web design services can assist you in reclaiming your
-                company's online image. Your business will flourish on the
+                company&#39;s online image. Your business will flourish on the
                 Internet thanks to the combination of style and technology we
                 provide, as well as our experience.
               </p>
@@ -100,8 +99,8 @@ const Services = () => {
               <p className="description text-gray-700">
                 Since the beginning, we at Akeshya have specialised in website
                 maintenance. We recognise the significance of having your
-                business online 24 hours a day, seven days a week, and we've
-                created a system to ensure that we're always available.
+                business online 24 hours a day, seven days a week, and we&#39;ve
+                created a system to ensure that we&#39;re always available.
               </p>
             </div>
           </div>
